@@ -1,0 +1,24 @@
+%script{:type => "text/x-handlebars", "data-template-name"=>"app"}
+  {{outlet}}
+
+%script{:type => "text/x-handlebars", "data-template-name"=>"grid"}
+  %div{:class=>'iosSlider'}
+    %div{:class=>'slider'}
+      {{#each slides}}
+      %div{:class=>'slide'}
+        %div{:class=>'row-fluid'}
+          %img{:class=>'span5 image-item', :bind =>{ :src => 'first.href' }}
+          %img{:class=>'span5 image-item', :bind =>{ :src => 'second.href' }}
+        %div{:class=>'row-fluid'}
+          %img{:class=>'span5 image-item', :bind =>{ :src => 'third.href' }}
+          %img{:class=>'span5 image-item', :bind =>{ :src => 'fourth.href' }}
+      {{/each}}
+
+%script{:type => "text/x-handlebars", "data-template-name"=>"selected"}
+  {{#each App.AnswerItems}}
+  {{name}}
+  {{/each}}
+
+%script{:type => "text/x-handlebars", "data-template-name"=>"index"}
+  {{outlet grid}}
+  {{outlet selected}}
