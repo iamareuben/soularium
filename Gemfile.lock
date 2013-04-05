@@ -142,7 +142,7 @@ DEPENDENCIES
   ember-rails
   font-awesome-rails
   haml-rails
-  hamlbars
+  hamlbars (~> 2.0)
   jquery-rails
   pg
   rails (= 3.2.9)
