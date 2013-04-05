@@ -1,3 +1,5 @@
+%style
+
 %script{:type => "text/x-handlebars", "data-template-name"=>"app"}
   {{outlet}}
 
@@ -7,18 +9,38 @@
       {{#each slides}}
       %div{:class=>'slide'}
         %div{:class=>'row-fluid'}
-          %img{:class=>'span5 image-item', :bind =>{ :src => 'first.href' }}
-          %img{:class=>'span5 image-item', :bind =>{ :src => 'second.href' }}
+          {{view App.ItemView pos="first"}}
+          {{view App.ItemView pos="second"}}
         %div{:class=>'row-fluid'}
-          %img{:class=>'span5 image-item', :bind =>{ :src => 'third.href' }}
-          %img{:class=>'span5 image-item', :bind =>{ :src => 'fourth.href' }}
+          {{view App.ItemView pos="third"}}
+          {{view App.ItemView pos="fourth"}}
       {{/each}}
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"selected"}
-  {{#each App.AnswerItems}}
-  {{name}}
-  {{/each}}
+  %button{:class=>'btn btn-large btn-primary', :type=>'button', :_action => 'toggleContainer' }
+    Slide
+  %div{:id=>'selected-container'}
+    {{#each App.AnswerItems}}
+    %img{:class=>'preview-item', :bind =>{ :src => 'href'}}
+    {{/each}}
+
+%script{:type => "text/x-handlebars", "data-template-name"=>"zoom"}
+  %div{:id=>"item-zoom"}
+    %img{:class=>'span10 offset2', :bind =>{ :src => 'App.PreviewImage.href'}}
+    %button{:class=>'btn btn-large btn-primary span3 offset5 preview-button', :type=>'button', :_action => 'addSelection' }
+      %i{:class=>"icon-heart icon-white"} 
+      &nbspAdd to list
+    %button{:class=>'btn btn-large btn-danger span2 preview-button', :type=>'button', :_action => 'addSelection' }
+      %i{:class=>"icon-remove icon-white"} 
+      &nbspClose
+
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"index"}
   {{outlet grid}}
   {{outlet selected}}
+  {{outlet zoom}}
+
+%script{:type => "text/x-handlebars", "data-template-name"=>"item-partial"}
+  %img{:class=>'span6 image-item', :bind =>{ :src => 'view.item.href' }}
+
+

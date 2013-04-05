@@ -3,7 +3,8 @@ App = Ember.Application.create({
 });
 
 App.ApplicationView = Ember.View.extend({
-  templateName: 'app'
+  templateName: 'app',
+  PreviewImage: null
 });
 
 App.ApplicationController = Ember.Controller.extend({
@@ -39,6 +40,10 @@ App.IndexRoute = Ember.Route.extend({
        outlet: 'selected',
        controller: 'selected'
    });
+   this.render('zoom', {
+      into: 'index',
+      outlet: 'zoom'
+   });
   }
 });
 
@@ -57,22 +62,47 @@ App.GridController = Ember.Controller.extend({
   }.property('App.Items')
 });
 
-App.SelectedController = Ember.Controller.extend({});
+App.SelectedController = Ember.Controller.extend({
+  bottomTransition: '0px',
+  toggleContainer: function() {
+    $('#selected-container').animate({bottom: this.bottomTransition}, 500);
+    if(this.bottomTransition == '0px')
+      this.bottomTransition = '-160px';
+    else
+      this.bottomTransition = '0px';
+  }
+});
 
 App.GridView = Ember.View.extend({
   didInsertElement:function() {
     console.log('redraw');
+    //calculate screen size
+    width = $(window).width();
+    height = $(window).height()-20;
+    left = 15;
+    if(width/height > 1.4) {    //height is the limiting factor
+      _width = height*1.4 + 50;
+      left = (width-_width)/2 + 15; //15 offsets the padding
+      style = ".iosSlider{height:"+height+"px; width:"+_width+"px;left:"+left+"px;} .iosSlider .slider .slide {height:"+height+"px; width:"+_width+"px;}"
+      $("style").append(style);
+
+    }
+    else {    //width is the limiting factor
+      height = width/1.4;
+      style = ".iosSlider{height:"+height+"px; width:"+width+"px;} .iosSlider .slider .slide {height:"+height+"px; width:"+width+"px;}"
+      $("style").append(style);
+    }
     $('.iosSlider').iosSlider({
       snapToChildren: true,
-      scrollbar: true,
-      scrollbarHide: false,
+      scrollbar: false,
+      tabToAdvance: true,
+      keyboardControls: true,
       desktopClickDrag: true,
-      scrollbarLocation: 'bottom',
-      scrollbarBorder: '1px solid #000',
-      scrollbarMargin: '0 30px 16px 30px',
-      scrollbarOpacity: '0.75'
+      stageCSS: {left: left, top:'10px'}
       //onSlideChange: changeSlideIdentifier
     });
+
+
     // $('.iosSlider').width($(window).width() - 40);
     // $('.iosSlider .slider .slide ').width($(window).height() - 40);
     // $('.iosSlider').height($(window).height() - 40);
@@ -84,5 +114,33 @@ App.GridView = Ember.View.extend({
   // }
 });
 
-$(document).ready(function() {
+App.ItemView = Ember.View.extend({
+  templateName: 'item-partial',
+  item: null,
+  willInsertElement: function() {
+    this.set('item', this._context[this.pos]);
+    console.log('done')
+  },
+  click: function() {
+    App.set('PreviewImage', this.item);
+    $('#item-zoom').slideDown();
+  }
+});
+
+App.ZoomView = Ember.View.extend({
+  click: function() {
+    $('#item-zoom').slideUp();
+  },
+  drag: function() {
+    $('#item-zoom').slideUp();
+  },
+  touchMove: function() {
+    $('#item-zoom').slideUp();
+  }
+});
+
+App.ZoomController = Ember.Controller.extend({
+  addSelection: function() {
+    App.AnswerItems.pushObject(App.PreviewImage);
+  }
 });

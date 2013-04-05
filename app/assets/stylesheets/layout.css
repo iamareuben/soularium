@@ -1,14 +1,15 @@
+body {
+  overflow: hidden;
+}
+
 /* slider container */
 .iosSlider {
   /* required */
   position: relative;
   top: 0;
-  left: 0;
   overflow: hidden;
   /* width set in javascript */
   /* height set in javascript */
-  width: 500px;
-  height: 500px;
 }
 
 /* slider */
@@ -21,16 +22,47 @@
 /* slide */
 .iosSlider .slider .slide {
   /* required */
-  float: left;
+  /*float: left;*/
 
   /* width set in javascript */  
   /* height set in javascript */
-  width:500px;
-  height: 500px;
 }
 
 .image-item {
   /*width: 45%;*/
-  padding-bottom: 10px;
+  padding-bottom: 15px;
+  padding-right: 15px;
   border: none;
+}
+
+.preview-button{
+  position:relative;
+  top:20px;
+}
+
+#item-zoom {
+  position: absolute;
+  left:0px;
+  top:0px;
+  right:0px;
+  bottom:0px;
+  background-color: black;
+  display:none;
+  z-index: 9999;
+}
+
+.preview-item {
+  height: 180px;
+  padding: 10px;
+}
+
+#selected-container {
+  position:absolute;
+  bottom: -150px;
+  width: 80%;
+  left: 10%;
+  height: 200px;
+  background-color: red;
+  z-index: 9998;
+  overflow-x: scroll;
 }
