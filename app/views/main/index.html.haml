@@ -18,19 +18,11 @@
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"selected"}
   %div{:id=>'selected-container'}
-    %a{:_action => 'toggleContainer' }
-      {{#if show}}
-      %i{:id=>'toggle-button', :class=>"icon-chevron-down icon-white icon-4x"}
-      {{else}}
-      %i{:id=>'toggle-button', :class=>"icon-chevron-up icon-white icon-4x"}
-      {{/if}}
     %div{:id=>'preview-button'}
       %i{:class=>"icon-chevron-right icon-4x"}
 
     {{#each App.AnswerItems}}
-    %img{:class=>'preview-item', :bind =>{ :src => 'href'}}
-    %div{:class=>'overlay'}
-      This is text
+    %img{:class=>'preview-item-img', :bind =>{ :src => 'href'}}
     {{/each}}
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"zoom"}
