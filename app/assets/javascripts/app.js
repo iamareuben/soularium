@@ -80,7 +80,7 @@ App.SelectedController = Ember.Controller.extend({
       this.bottomTransition = '0px';
       this.set('show', false);
     }
-  }
+  },
   viewSelection: function() {
 
   }
