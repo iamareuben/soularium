@@ -64,12 +64,17 @@ App.GridController = Ember.Controller.extend({
 
 App.SelectedController = Ember.Controller.extend({
   bottomTransition: '0px',
+  show: false,
   toggleContainer: function() {
     $('#selected-container').animate({bottom: this.bottomTransition}, 500);
-    if(this.bottomTransition == '0px')
-      this.bottomTransition = '-160px';
-    else
+    if(this.bottomTransition == '0px') {
+      this.bottomTransition = '-162px';
+      this.set('show', true);
+    }
+    else {
       this.bottomTransition = '0px';
+      this.set('show', false);
+    }
   }
 });
 
@@ -142,5 +147,8 @@ App.ZoomView = Ember.View.extend({
 App.ZoomController = Ember.Controller.extend({
   addSelection: function() {
     App.AnswerItems.pushObject(App.PreviewImage);
+  },
+  close: function() {
+    $('#item-zoom').slideUp();
   }
 });

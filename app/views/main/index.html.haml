@@ -17,11 +17,20 @@
       {{/each}}
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"selected"}
-  %button{:class=>'btn btn-large btn-primary', :type=>'button', :_action => 'toggleContainer' }
-    Slide
   %div{:id=>'selected-container'}
+    %a{:_action => 'toggleContainer' }
+      {{#if show}}
+      %i{:id=>'toggle-button', :class=>"icon-chevron-down icon-white icon-4x"}
+      {{else}}
+      %i{:id=>'toggle-button', :class=>"icon-chevron-up icon-white icon-4x"}
+      {{/if}}
+    %div{:id=>'preview-button'}
+      %i{:class=>"icon-chevron-right icon-4x"}
+
     {{#each App.AnswerItems}}
     %img{:class=>'preview-item', :bind =>{ :src => 'href'}}
+    %div{:class=>'overlay'}
+      This is text
     {{/each}}
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"zoom"}
@@ -30,7 +39,7 @@
     %button{:class=>'btn btn-large btn-primary span3 offset5 preview-button', :type=>'button', :_action => 'addSelection' }
       %i{:class=>"icon-heart icon-white"} 
       &nbspAdd to list
-    %button{:class=>'btn btn-large btn-danger span2 preview-button', :type=>'button', :_action => 'addSelection' }
+    %button{:class=>'btn btn-large btn-danger span2 preview-button', :type=>'button', :_action => 'close' }
       %i{:class=>"icon-remove icon-white"} 
       &nbspClose
 

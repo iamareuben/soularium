@@ -32,8 +32,9 @@ body {
   /*width: 45%;*/
   padding-bottom: 15px;
   padding-right: 15px;
-  border: none;
+  border-top-left-radius: 20px
 }
+
 
 .preview-button{
   position:relative;
@@ -57,12 +58,33 @@ body {
 }
 
 #selected-container {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
   position:absolute;
-  bottom: -150px;
+  bottom: -162px;
   width: 80%;
   left: 10%;
   height: 200px;
-  background-color: red;
+  background-color: #F2EFC4;
   z-index: 9998;
   overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+#preview-button {
+  position: absolute;
+  right: 20px;
+  top: 80px;
+}
+
+#toggle-button {
+  color: black;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -28px;
+}
+
+a:hover {
+  text-decoration: none;
 }

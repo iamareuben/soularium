@@ -8,7 +8,7 @@ gem 'rails', '3.2.9'
 gem 'pg'
 
 gem "haml-rails"
-
+gem "font-awesome-rails"
 gem 'sass-rails',   '~> 3.2.3'
 gem 'bootstrap-sass', '~> 2.1.1.0'
 # Gems used only for assets and not required
