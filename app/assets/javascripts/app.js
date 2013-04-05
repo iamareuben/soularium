@@ -10,6 +10,11 @@ App.ApplicationView = Ember.View.extend({
 App.ApplicationController = Ember.Controller.extend({
 });
 
+App.Router.map(function() {
+  this.route("about", { path: "/about" });
+  this.route("selections", { path: "/view" });
+});
+
 App.Item = Ember.Object.extend({
   id: null,
   url: null,
@@ -75,6 +80,9 @@ App.SelectedController = Ember.Controller.extend({
       this.bottomTransition = '0px';
       this.set('show', false);
     }
+  }
+  viewSelection: function() {
+
   }
 });
 

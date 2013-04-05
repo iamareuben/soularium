@@ -18,8 +18,18 @@
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"selected"}
   %div{:id=>'selected-container'}
-    %div{:id=>'preview-button'}
-      %i{:class=>"icon-chevron-right icon-4x"}
+    %div{:id=>'viewall-button'}
+      %a{:_action => 'viewSelection'}
+        %i{:class=>"icon-chevron-right icon-4x"}
+
+    %a{:_action => 'toggleContainer' }
+      {{#if show}}
+      %i{:id=>'toggle-button', :class=>"icon-chevron-down icon-white icon-4x"}
+      {{else}}
+      %i{:id=>'toggle-button', :class=>"icon-chevron-up icon-white icon-4x"}
+      {{/if}}
+    
+    
 
     {{#each App.AnswerItems}}
     %img{:class=>'preview-item-img', :bind =>{ :src => 'href'}}
