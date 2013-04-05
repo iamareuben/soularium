@@ -1,5 +1,10 @@
 Soularium::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
+  # Heroku REQUIRES this to be false
+  config.assets.initialize_on_precompile = false
+  
+  # Configure the sendfile headers for Heroku.  "X-Accel-Redirect" is also a good value for this since Heroku use Nginx.
+  config.action_dispatch.x_sendfile_header = nil
 
   # Code is not reloaded between requests
   config.cache_classes = true
