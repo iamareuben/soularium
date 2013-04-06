@@ -11,7 +11,7 @@ App.ApplicationController = Ember.Controller.extend({
 });
 
 App.Router.map(function() {
-  this.route("selected", { path: "/view" });
+  this.route("show", { path: "/view" });
 });
 
 App.Item = Ember.Object.extend({
@@ -81,7 +81,7 @@ App.SelectedController = Ember.Controller.extend({
     }
   },
   viewSelection: function() {
-    this.transitionToRoute('selected')
+    this.transitionToRoute('show')
 
   }
 });
