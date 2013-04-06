@@ -5,9 +5,9 @@ gem 'rails', '3.2.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+gem 'foreman'
+gem 'unicorn'
 gem 'pg'
-
-gem "haml-rails"
 gem "font-awesome-rails"
 gem 'sass-rails',   '~> 3.2.3'
 gem 'bootstrap-sass', '~> 2.1.1.0'
