@@ -11,8 +11,7 @@ App.ApplicationController = Ember.Controller.extend({
 });
 
 App.Router.map(function() {
-  this.route("about", { path: "/about" });
-  this.route("selections", { path: "/view" });
+  this.route("selected", { path: "/view" });
 });
 
 App.Item = Ember.Object.extend({
@@ -82,6 +81,7 @@ App.SelectedController = Ember.Controller.extend({
     }
   },
   viewSelection: function() {
+    this.transitionToRoute('selected')
 
   }
 });
@@ -160,3 +160,6 @@ App.ZoomController = Ember.Controller.extend({
     $('#item-zoom').slideUp();
   }
 });
+
+// App.SelectedView = Ember.Controller.extend({
+// })

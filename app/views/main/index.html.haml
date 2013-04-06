@@ -37,7 +37,7 @@
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"zoom"}
   %div{:id=>"item-zoom"}
-    %img{:class=>'span10 offset2', :bind =>{ :src => 'App.PreviewImage.href'}}
+    %img{:class=>'zoom-image', :bind =>{ :src => 'App.PreviewImage.href'}}
     %button{:class=>'btn btn-large btn-primary span3 offset5 preview-button', :type=>'button', :_action => 'addSelection' }
       %i{:class=>"icon-heart icon-white"} 
       &nbspAdd to list
@@ -53,5 +53,8 @@
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"item-partial"}
   %img{:class=>'span6 image-item', :bind =>{ :src => 'view.item.href' }}
+
+%script{:type => "text/x-handlebars", "data-template-name"=>"selected"}
+      
 
 

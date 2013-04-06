@@ -51,6 +51,11 @@ body {
   display:none;
   z-index: 9999;
 }
+
+.zoom-image {
+  height: 80%;
+}
+
 .preview-item {
   width: auto;
 }
