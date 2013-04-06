@@ -64,6 +64,11 @@ GEM
       thor (>= 0.13.6)
     haml (4.0.1)
       tilt
+    haml-rails (0.4)
+      actionpack (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
+      haml (>= 3.1, < 4.1)
+      railties (>= 3.1, < 4.1)
     hamlbars (2.0.0)
       execjs (>= 1.2)
       haml
@@ -145,6 +150,7 @@ DEPENDENCIES
   ember-rails
   font-awesome-rails
   foreman
+  haml-rails
   hamlbars (~> 2.0)
   jquery-rails
   pg
