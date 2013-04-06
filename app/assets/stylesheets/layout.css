@@ -1,5 +1,5 @@
 body {
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 /* slider container */
@@ -74,8 +74,8 @@ body {
   height: 200px;
   background-color: #F2EFC4;
   z-index: 9998;
-  /*overflow-x: scroll;
-  overflow-y: hidden;*/
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 #viewall-button {
