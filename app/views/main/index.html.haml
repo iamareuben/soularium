@@ -18,10 +18,10 @@
 %script{:type => "text/x-handlebars", "data-template-name"=>"selected"}
   %div{:id=>'selected-container'}
     %div{:id=>'viewall-button'}
-      %a{:_action => 'viewSelection'}
+      %a{:href=>"", :_action => 'viewSelection'}
         %i{:class=>"icon-chevron-right icon-4x"}
 
-    %a{:_action => 'toggleContainer' }
+    %a{:href=>"",:_action => 'toggleContainer' }
       {{#if show}}
       %i{:id=>'toggle-button', :class=>"icon-chevron-down icon-white icon-4x"}
       {{else}}
@@ -37,12 +37,13 @@
 %script{:type => "text/x-handlebars", "data-template-name"=>"zoom"}
   %div{:id=>"item-zoom"}
     %img{:class=>'zoom-image', :bind =>{ :src => 'App.PreviewImage.href'}}
-    %button{:class=>'btn btn-large btn-primary span3 offset5 preview-button', :type=>'button', :_action => 'addSelection' }
-      %i{:class=>"icon-heart icon-white"} 
-      &nbspAdd to list
-    %button{:class=>'btn btn-large btn-danger span2 preview-button', :type=>'button', :_action => 'close' }
-      %i{:class=>"icon-remove icon-white"} 
-      &nbspClose
+    %div{:class=>'row-fluid'}
+      %button{:class=>'btn btn-large btn-primary span2 offset4 preview-button', :type=>'button', :_action => 'addSelection' }
+        %i{:class=>"icon-heart icon-white"} 
+        &nbspAdd to list
+      %button{:class=>'btn btn-large btn-danger span2 preview-button', :type=>'button', :_action => 'close' }
+        %i{:class=>"icon-remove icon-white"} 
+        &nbspClose
 
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"index"}
