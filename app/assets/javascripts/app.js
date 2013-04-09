@@ -198,6 +198,7 @@ App.ShowView = Ember.View.extend({
         coverwidth: App.width/2,
         coverheight: App.height/2,
         backgroundopacity: 0,
+        showtext: false,
         playlist: playlist
       })
     }
