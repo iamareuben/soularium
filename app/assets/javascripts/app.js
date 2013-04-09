@@ -1,10 +1,15 @@
+
+
 App = Ember.Application.create({
    LOG_TRANSITIONS: true
 });
 
 App.ApplicationView = Ember.View.extend({
   templateName: 'app',
-  PreviewImage: null
+  PreviewImage: null,
+  width: 800,
+  height: 400
+
 });
 
 App.ApplicationController = Ember.Controller.extend({
@@ -23,7 +28,7 @@ App.Item = Ember.Object.extend({
 App.Items = Ember.A();
 App.AnswerItems = Ember.A();
 
-App.Items.pushObject(App.Item.create({name: "Item 1", href: 'http://sphotos-d.ak.fbcdn.net/hphotos-ak-ash3/886342_436183656460956_702149449_o.jpg'}));
+App.Items.pushObject(App.Item.create({name: "Item 1", href: 'http://sphotos-h.ak.fbcdn.net/hphotos-ak-snc7/574618_10151515660270955_2046349226_n.jpg'}));
 App.Items.pushObject(App.Item.create({name: "Item 2", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg'}));
 App.Items.pushObject(App.Item.create({name: "Item 3", href: 'http://sphotos-g.ak.fbcdn.net/hphotos-ak-frc1/830386_436184266460895_521886329_o.jpg'}));
 App.Items.pushObject(App.Item.create({name: "Item 4", href: 'http://sphotos-d.ak.fbcdn.net/hphotos-ak-prn1/882499_436883773057611_953088772_o.jpg'}));
@@ -60,7 +65,7 @@ App.GridController = Ember.Controller.extend({
   slides: function() {
     items = [];
     for(var i=0; i<Math.ceil(this._itemList.length/4); i++) {
-      items[i] = {first:this._itemList[i*4], second:this._itemList[i*4+1], third:this._itemList[i*4+2], fourth:this._itemList[i*4+3], };
+      items[i] = {first:this._itemList[i*4], second:this._itemList[i*4+1], third:this._itemList[i*4+2], fourth:this._itemList[i*4+3], divID: 'slider-'+i};
     }
     return items;
   }.property('App.Items')
@@ -92,6 +97,8 @@ App.GridView = Ember.View.extend({
     //calculate screen size
     width = $(window).width();
     height = $(window).height()-20;
+    App.set('width', width);
+    App.set('height', height);
     left = 15;
     if(width/height > 1.4) {    //height is the limiting factor
       _width = height*1.4 + 50;
@@ -114,7 +121,17 @@ App.GridView = Ember.View.extend({
       stageCSS: {left: left, top:'10px'}
       //onSlideChange: changeSlideIdentifier
     });
-
+    for (var i = 0; i < App.Items.length/4; i++) {
+      var $container = $('#slider-'+i);
+        $container.imagesLoaded( function(){
+          $container.masonry({
+            itemSelector : '.image-item',
+            columnWidth : 240
+          });
+          //alert('Masonry run');
+        });
+    };
+    
 
     // $('.iosSlider').width($(window).width() - 40);
     // $('.iosSlider .slider .slide ').width($(window).height() - 40);
@@ -161,5 +178,28 @@ App.ZoomController = Ember.Controller.extend({
   }
 });
 
-// App.SelectedView = Ember.Controller.extend({
-// })
+App.ShowView = Ember.View.extend({
+
+  didInsertElement: function() {
+    playlist = [];
+    for(i=0; i<App.AnswerItems.length; i++) {
+      console.log(App.AnswerItems[i])
+      playlist[i] = new Object;
+      playlist[i].title = App.AnswerItems[i].name;
+      playlist[i].image = App.AnswerItems[i].href;
+      playlist[i].description = "PHHT WHATEVER";
+    }
+
+    CoverFlowTest = playlist;
+    if(App.AnswerItems.length > 0) {
+      $('#coverflow').coverflow({
+        width: App.width,
+        height: App.height*0.9,
+        coverwidth: App.width/2,
+        coverheight: App.height/2,
+        backgroundopacity: 0,
+        playlist: playlist
+      })
+    }
+  }
+})

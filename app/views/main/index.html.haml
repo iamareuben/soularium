@@ -7,14 +7,13 @@
   %div{:class=>'iosSlider'}
     %div{:class=>'slider'}
       {{#each slides}}
-      %div{:class=>'slide'}
-        %div{:class=>'row-fluid'}
-          {{view App.ItemView pos="first"}}
-          {{view App.ItemView pos="second"}}
-        %div{:class=>'row-fluid'}
-          {{view App.ItemView pos="third"}}
-          {{view App.ItemView pos="fourth"}}
+      %div{:class=>'slide', :bind => {:id=>'divID'}}
+        {{view App.ItemView pos="first"}}
+        {{view App.ItemView pos="second"}}
+        {{view App.ItemView pos="third"}}
+        {{view App.ItemView pos="fourth"}}
       {{/each}}
+
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"selected"}
   %div{:id=>'selected-container'}
@@ -52,10 +51,10 @@
   {{outlet zoom}}
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"item-partial"}
-  %img{:class=>'span6 image-item', :bind =>{ :src => 'view.item.href' }}
+  %img{:class=>'image-item', :bind =>{ :src => 'view.item.href' }}
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"show"}
-  %div{:class=>'coverflow'}
+  %div{:id=>'coverflow'}
       
 
 
