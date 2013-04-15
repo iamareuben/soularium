@@ -52,7 +52,8 @@
   {{outlet zoom}}
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"item-partial"}
-  %img{:class=>'image-item', :bind =>{ :src => 'view.item.href' }}
+  %div{:bind=>{:class=>'view.item.containerClass'}}
+    %img{:class=>'image-item', :bind =>{ :src => 'view.item.href', :class=>'view.item.class' }}
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"show"}
   %div{:id=>'coverflow'}

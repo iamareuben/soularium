@@ -1,5 +1,5 @@
 body {
-  overflow: hidden;
+  /*overflow: hidden;*/
 }
 
 /* slider container */
@@ -101,4 +101,67 @@ body {
 
 a:hover {
   text-decoration: none;
+}
+.img-outer-default {
+
+}
+
+.image-1 {
+  position: relative;
+  max-width: none;
+  max-height: none;
+  /*left: -33%;*/
+  height: 100%;
+  
+}.image-2 {
+  position: relative;
+  max-width: none;
+  max-height: none;
+  width: 100%;
+  
+}.image-3 {
+  position: relative;
+  max-width: none;
+  max-height: none;
+  width: 100%;
+  
+}.image-4 {
+  position: relative;
+  max-width: none;
+  max-height: none;
+  float: none;
+  width: 100%;
+
+}.image-outer1 {
+  top: 0px;
+  float: left;
+  position: relative;
+  display: inline;
+  width: 50%;
+  overflow: hidden;
+  
+}.image-outer2 {
+  float: left;
+  position: relative;
+  display: inline;
+  width: 50%;
+  height: 33%;
+  overflow: hidden;
+  background-color: blue;
+
+}.image-outer3 {
+  background-color: green;
+  float: left;
+  position: relative;
+  /*display: block;*/
+  width: 50%;
+  height: 10%;
+  overflow: hidden;
+
+}.image-outer4 {
+  position: relative;
+  /*display: block;*/
+  height: 33%;
+  width: 50%;
+  overflow: hidden;
 }

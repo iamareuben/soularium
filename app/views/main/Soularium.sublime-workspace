@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"backgrou",
+				"background-color"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"border-top",
+				"border-top-left-radius"
+			],
+			[
+				"border-radiu",
+				"border-bottom-right-radius"
+			],
+			[
+				"border-radius",
+				"border-top-left-radius"
+			],
+			[
+				"bottom",
+				"bottomTransition"
+			],
+			[
+				"backgou",
+				"background-origin"
+			],
+			[
 				"grid",
 				"GridController"
 			],
@@ -22,10 +50,6 @@
 			[
 				"find",
 				"findProperty"
-			],
-			[
-				"text-",
-				"text-decoration"
 			],
 			[
 				"border-toi",
@@ -179,16 +203,33 @@
 			"file": "/Users/reubenposthuma/DEV/Soularium/app/assets/javascripts/app.js",
 			"settings":
 			{
-				"buffer_size": 1166,
+				"buffer_size": 6544,
 				"line_ending": "Unix",
 				"name": "App = Ember.Application.create() {"
 			}
 		},
 		{
-			"file": "/Users/reubenposthuma/DEV/outreach-generator/app/assets/javascripts/campaign_frontend/src/survey.js",
+			"file": "index.html.haml",
 			"settings":
 			{
-				"buffer_size": 9632,
+				"buffer_size": 2112,
+				"line_ending": "Unix",
+				"name": "%h1 Welcome to Soularium"
+			}
+		},
+		{
+			"contents": "%div{:bind=>{:class=>'view.item.containerClass'}}\n\n%img{:class=>'image-item', :bind =>{ :src => 'view.item.href', :class=>'view.item.class' }}",
+			"settings":
+			{
+				"buffer_size": 142,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/reubenposthuma/DEV/Soularium/app/views/layouts/application.html.erb",
+			"settings":
+			{
+				"buffer_size": 354,
 				"line_ending": "Unix"
 			}
 		},
@@ -196,17 +237,34 @@
 			"file": "/Users/reubenposthuma/DEV/Soularium/Gemfile",
 			"settings":
 			{
-				"buffer_size": 800,
+				"buffer_size": 938,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "index.html.haml",
+			"file": "/Users/reubenposthuma/DEV/Soularium/Procfile",
 			"settings":
 			{
-				"buffer_size": 468,
+				"buffer_size": 57,
 				"line_ending": "Unix",
-				"name": "%h1 Welcome to Soularium"
+				"name": "web: bundle exec unicorn -p $PORT -c ./config/unic"
+			}
+		},
+		{
+			"file": "/Users/reubenposthuma/DEV/Soularium/app/assets/stylesheets/layout.css",
+			"settings":
+			{
+				"buffer_size": 2429,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "PPPP\nimg.image-1 {\n  float: left;\n  position: relative;\n  left: -33%;\n  max-width: none;\n  height: 100%;\n  \n}.image-2 {\n  float: left;\n  position: relative;\n  left: -33%;\n  max-width: none;\n  height: 100%;\n  \n}.image-3 {\n  float: left;\n  position: relative;\n  left: -33%;\n  max-width: none;\n  height: 100%;\n  \n}.image-4 {\n  float: left;\n  position: relative;\n  left: -33%;\n  max-width: none;\n  height: 100%;\n\n}.image-5 {\n  \n}.image-6 {\n  \n}.image-outer1 {\n  float: left;\n  position: relative;\n  display: inline;\n  width: 25%;\n  overflow: hidden;\n  \n}.image-outer2 {\n  float: left;\n  position: relative;\n  display: inline;\n  width: 25%;\n  overflow: hidden;\n\n}.image-outer3 {\n  float: left;\n  position: relative;\n  display: inline;\n  width: 25%;\n  overflow: hidden;\n\n}.image-outer4 {\n  float: left;\n  position: relative;\n  display: block;\n  width: 25%;\n  overflow: hidden;\n}\n\nimg.image-1 {\n  float: left;\n  position: relative;\n  left: -33%;\n  max-width: none;\n  height: 100%;\n  \n}.image-2 {\n  float: left;\n  position: relative;\n  max-width: none;\n  height: 50%;\n  \n}.image-3 {\n  float: left;\n  position: relative;\n  max-width: none;\n  height: 50%;\n  \n}.image-4 {\n  float: left;\n  position: relative;\n  left: -33%;\n  max-width: none;\n  height: 100%;\n\n}.image-outer1 {\n  top: 0px;\n  float: left;\n  position: relative;\n  display: inline;\n  width: 25%;\n  overflow: hidden;\n  \n}.image-outer2 {\n  float: left;\n  position: relative;\n  display: inline;\n  width: 50%;\n  height: 50%;\n  overflow: hidden;\n\n}.image-outer3 {\n  float: left;\n  position: relative;\n  display: inline;\n  width: 50%;\n  height: 50%;\n  overflow: hidden;\n\n}.image-outer4 {\n  position: relative;\n  display: block;\n  width: 25%;\n  overflow: hidden;\n}\n\nPPLL \n.image-1 {\n  position: relative;\n  max-width: none;\n  left: -33%;\n  height: 100%;\n  \n}.image-2 {\n  position: relative;\n  max-width: none;\n  height: 50%;\n  \n}.image-3 {\n  position: relative;\n  max-width: none;\n  height: 50%;\n  \n}.image-4 {\n  position: relative;\n  max-width: none;\n  float: none;\n  left: -33%;\n  height: 100%;\n\n}.image-outer1 {\n  top: 0px;\n  float: left;\n  position: relative;\n  display: inline;\n  width: 25%;\n  overflow: hidden;\n  \n}.image-outer2 {\n  float: left;\n  position: relative;\n  display: inline;\n  width: 50%;\n  height: 50%;\n  overflow: hidden;\n\n}.image-outer3 {\n  float: left;\n  position: relative;\n  display: inline;\n  width: 50%;\n  height: 50%;\n  overflow: hidden;\n\n}.image-outer4 {\n  position: relative;\n  display: block;\n  width: 25%;\n  overflow: hidden;\n}\n\n",
+			"settings":
+			{
+				"buffer_size": 2504,
+				"line_ending": "Unix",
+				"name": "PPPP"
 			}
 		}
 	],
@@ -242,14 +300,21 @@
 	},
 	"file_history":
 	[
+		"/Users/reubenposthuma/DEV/Soularium/app/assets/stylesheets/layout.css",
+		"/Users/reubenposthuma/DEV/Soularium/app/assets/stylesheets/scaffolds.css.scss",
 		"/Users/reubenposthuma/DEV/Soularium/app/assets/javascripts/application.js",
+		"/Users/reubenposthuma/DEV/Soularium/config/environments/production.rb",
+		"/Users/reubenposthuma/DEV/Soularium/app/assets/stylesheets/application.css",
+		"/Users/reubenposthuma/DEV/Soularium/config/database.yml",
+		"/Users/reubenposthuma/DEV/outreach-generator/config/database.yml",
+		"/Users/reubenposthuma/DEV/outreach-generator/app/assets/javascripts/campaign_frontend/src/survey.js",
+		"/Users/reubenposthuma/DEV/Soularium/Gemfile",
 		"/Users/reubenposthuma/DEV/Soularium/db/migrate/20130329034002_create_items.rb",
 		"/Users/reubenposthuma/DEV/Soularium/config/routes.rb",
 		"/Users/reubenposthuma/DEV/Soularium/app/controllers/main_controller.rb",
 		"/Users/reubenposthuma/DEV/Soularium/config/application.rb",
 		"/Applications/MAMP/htdocs/Church/wp-content/themes/church/header.php",
 		"/Users/reubenposthuma/DEV/outreach-generator/app/assets/javascripts/campaign_frontend/src/ember-facebook.js",
-		"/Users/reubenposthuma/DEV/outreach-generator/app/assets/javascripts/campaign_frontend/src/survey.js",
 		"/Users/reubenposthuma/DEV/outreach-generator/app/assets/stylesheets/campaign_frontend/index.css.scss",
 		"/Users/reubenposthuma/Downloads/mydbTatai.dump",
 		"/Users/reubenposthuma/DEV/outreach-generator/app/assets/javascripts/dashboard/campaigns/new.js",
@@ -362,14 +427,7 @@
 		"/Users/reubenposthuma/DEV/outreach-generator/app/assets/javascripts/create.js.coffee",
 		"/Users/reubenposthuma/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
 		"/Users/reubenposthuma/DEV/Rails/TestApp/Test/app/assets/javascripts/App.js",
-		"/Users/reubenposthuma/DEV/Rails/TestApp/Test/app/views/appointments/index.html.haml",
-		"/Users/reubenposthuma/DEV/Rails/TestApp/Test/app/assets/javascripts/templates/appointment.hbs",
-		"/Users/reubenposthuma/DEV/outreach-generator/app/models/crm.rb",
-		"/Users/reubenposthuma/DEV/outreach-generator/app/views/create/step1.haml",
-		"/Users/reubenposthuma/DEV/outreach-generator/app/controllers/organisation_controller.rb",
-		"/Users/reubenposthuma/DEV/outreach-generator/app/views/organisation/index.html.haml",
-		"/Users/reubenposthuma/DEV/outreach-generator/db/schema.rb",
-		"/Users/reubenposthuma/DEV/outreach-generator/db/migrate/20121119062258_add_survey_id_to_organisations.rb"
+		"/Users/reubenposthuma/DEV/Rails/TestApp/Test/app/views/appointments/index.html.haml"
 	],
 	"find":
 	{
@@ -387,6 +445,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			".image-1 {\n  \n}",
+			"80%",
+			"overflow",
+			"}\n",
+			"selected",
+			"Router",
 			"property",
 			"name",
 			"background",
@@ -473,7 +537,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -481,70 +545,124 @@
 					"file": "/Users/reubenposthuma/DEV/Soularium/app/assets/javascripts/app.js",
 					"settings":
 					{
-						"buffer_size": 1166,
+						"buffer_size": 6544,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								340,
-								325
+								5338,
+								5338
 							]
 						],
 						"settings":
 						{
 							"auto_name": "App = Ember.Application.create() {",
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 120.0,
+						"translation.y": 2557.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "/Users/reubenposthuma/DEV/outreach-generator/app/assets/javascripts/campaign_frontend/src/survey.js",
+					"file": "index.html.haml",
 					"settings":
 					{
-						"buffer_size": 9632,
+						"buffer_size": 2112,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3338,
-								3348
+								2056,
+								2056
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"auto_name": "%h1 Welcome to Soularium",
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1984.0,
+						"translation.y": 262.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "/Users/reubenposthuma/DEV/Soularium/Gemfile",
 					"settings":
 					{
-						"buffer_size": 800,
+						"buffer_size": 142,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								35,
-								35
+								142,
+								142
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/Users/reubenposthuma/DEV/Soularium/app/views/layouts/application.html.erb",
+					"settings":
+					{
+						"buffer_size": 354,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								335,
+								335
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/reubenposthuma/DEV/Soularium/Gemfile",
+					"settings":
+					{
+						"buffer_size": 938,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								413,
+								413
 							]
 						],
 						"settings":
@@ -558,28 +676,82 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "index.html.haml",
+					"buffer": 5,
+					"file": "/Users/reubenposthuma/DEV/Soularium/Procfile",
 					"settings":
 					{
-						"buffer_size": 468,
+						"buffer_size": 57,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								468,
-								468
+								57,
+								57
 							]
 						],
 						"settings":
 						{
-							"auto_name": "%h1 Welcome to Soularium",
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+							"auto_name": "web: bundle exec unicorn -p $PORT -c ./config/unic",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Users/reubenposthuma/DEV/Soularium/app/assets/stylesheets/layout.css",
+					"settings":
+					{
+						"buffer_size": 2429,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2378,
+								2378
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2047.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"settings":
+					{
+						"buffer_size": 2504,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2502,
+								2502
+							]
+						],
+						"settings":
+						{
+							"auto_name": "PPPP",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2097.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -640,6 +812,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"/Users/reubenposthuma/DEV/QBWC/qbwc/Quickbooks.sublime-project"
+			]
 		],
 		"width": 380.0
 	},

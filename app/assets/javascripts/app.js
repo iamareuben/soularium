@@ -28,12 +28,15 @@ App.Item = Ember.Object.extend({
 App.Items = Ember.A();
 App.AnswerItems = Ember.A();
 
-App.Items.pushObject(App.Item.create({name: "Item 1", href: 'http://sphotos-h.ak.fbcdn.net/hphotos-ak-snc7/574618_10151515660270955_2046349226_n.jpg'}));
-App.Items.pushObject(App.Item.create({name: "Item 2", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg'}));
-App.Items.pushObject(App.Item.create({name: "Item 3", href: 'http://sphotos-g.ak.fbcdn.net/hphotos-ak-frc1/830386_436184266460895_521886329_o.jpg'}));
-App.Items.pushObject(App.Item.create({name: "Item 4", href: 'http://sphotos-d.ak.fbcdn.net/hphotos-ak-prn1/882499_436883773057611_953088772_o.jpg'}));
-App.Items.pushObject(App.Item.create({name: "Item 5", href: 'http://sphotos-e.ak.fbcdn.net/hphotos-ak-ash3/892437_436883863057602_1813858880_o.jpg'}));
-App.Items.pushObject(App.Item.create({name: "Item 6", href: 'http://sphotos-g.ak.fbcdn.net/hphotos-ak-prn1/885343_441018039310851_1761746740_o.jpg'}));
+App.Items.pushObject(App.Item.create({name: "Item 1", href: 'http://sphotos-h.ak.fbcdn.net/hphotos-ak-snc7/574618_10151515660270955_2046349226_n.jpg', class:'image-1', containerClass: 'image-outer1' }));
+App.Items.pushObject(App.Item.create({name: "Item 2", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg', class:'image-2', containerClass: 'image-outer2' }));
+App.Items.pushObject(App.Item.create({name: "Item 3", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg', class:'image-3', containerClass: 'image-outer3' }));
+App.Items.pushObject(App.Item.create({name: "Item 4", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg', class:'image-4', containerClass: 'image-outer4' }));
+// App.Items.pushObject(App.Item.create({name: "Item 2", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg', class:'image-2', containerClass: 'image-outer2 img-default'}));
+// App.Items.pushObject(App.Item.create({name: "Item 3", href: 'http://sphotos-g.ak.fbcdn.net/hphotos-ak-frc1/830386_436184266460895_521886329_o.jpg', class:'image-3', containerClass: 'image-outer3 img-default'}));
+// App.Items.pushObject(App.Item.create({name: "Item 4", href: 'http://sphotos-d.ak.fbcdn.net/hphotos-ak-prn1/882499_436883773057611_953088772_o.jpg', class:'image-4', containerClass: 'image-outer4'}));
+App.Items.pushObject(App.Item.create({name: "Item 5", href: 'http://sphotos-e.ak.fbcdn.net/hphotos-ak-ash3/892437_436883863057602_1813858880_o.jpg', class:'image-5', containerClass: 'image-outer5'}));
+App.Items.pushObject(App.Item.create({name: "Item 6", href: 'http://sphotos-g.ak.fbcdn.net/hphotos-ak-prn1/885343_441018039310851_1761746740_o.jpg', class:'image-6', containerClass: 'image-outer6'}));
 
 App.IndexRoute = Ember.Route.extend({
   renderTemplate: function() {
@@ -121,17 +124,6 @@ App.GridView = Ember.View.extend({
       stageCSS: {left: left, top:'10px'}
       //onSlideChange: changeSlideIdentifier
     });
-    for (var i = 0; i < App.Items.length/4; i++) {
-      var $container = $('#slider-'+i);
-        $container.imagesLoaded( function(){
-          $container.masonry({
-            itemSelector : '.image-item',
-            columnWidth : 240
-          });
-          //alert('Masonry run');
-        });
-    };
-    
 
     // $('.iosSlider').width($(window).width() - 40);
     // $('.iosSlider .slider .slide ').width($(window).height() - 40);
