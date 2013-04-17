@@ -28,10 +28,10 @@ App.Item = Ember.Object.extend({
 App.Items = Ember.A();
 App.AnswerItems = Ember.A();
 
-App.Items.pushObject(App.Item.create({name: "Item 1", href: 'http://sphotos-h.ak.fbcdn.net/hphotos-ak-snc7/574618_10151515660270955_2046349226_n.jpg', class:'image-1', containerClass: 'image-outer1' }));
-App.Items.pushObject(App.Item.create({name: "Item 2", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg', class:'image-2', containerClass: 'image-outer2' }));
-App.Items.pushObject(App.Item.create({name: "Item 3", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg', class:'image-3', containerClass: 'image-outer3' }));
-App.Items.pushObject(App.Item.create({name: "Item 4", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg', class:'image-4', containerClass: 'image-outer4' }));
+App.Items.pushObject(App.Item.create({name: "Item 1", href: 'http://sphotos-h.ak.fbcdn.net/hphotos-ak-snc7/574618_10151515660270955_2046349226_n.jpg', class:'plll image-1', containerClass: 'plll image-outer1' }));
+App.Items.pushObject(App.Item.create({name: "Item 2", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg', class:'plll image-2', containerClass: 'plll image-outer2' }));
+App.Items.pushObject(App.Item.create({name: "Item 3", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg', class:'plll image-3', containerClass: 'plll image-outer3' }));
+App.Items.pushObject(App.Item.create({name: "Item 4", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg', class:'plll image-4', containerClass: 'plll image-outer4' }));
 // App.Items.pushObject(App.Item.create({name: "Item 2", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg', class:'image-2', containerClass: 'image-outer2 img-default'}));
 // App.Items.pushObject(App.Item.create({name: "Item 3", href: 'http://sphotos-g.ak.fbcdn.net/hphotos-ak-frc1/830386_436184266460895_521886329_o.jpg', class:'image-3', containerClass: 'image-outer3 img-default'}));
 // App.Items.pushObject(App.Item.create({name: "Item 4", href: 'http://sphotos-d.ak.fbcdn.net/hphotos-ak-prn1/882499_436883773057611_953088772_o.jpg', class:'image-4', containerClass: 'image-outer4'}));

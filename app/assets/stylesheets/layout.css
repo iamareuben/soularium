@@ -1,4 +1,5 @@
 body {
+  background-color: black !important ;
   /*overflow: hidden;*/
 }
 
@@ -106,33 +107,36 @@ a:hover {
 
 }
 
-.image-1 {
+.pppp.image-1 {
   position: relative;
   max-width: none;
   max-height: none;
   /*left: -33%;*/
   height: 100%;
   
-}.image-2 {
+}.pppp.image-2 {
   position: relative;
   max-width: none;
   max-height: none;
+  top: -20%;
   width: 100%;
   
-}.image-3 {
+}.pppp.image-3 {
   position: relative;
   max-width: none;
   max-height: none;
+  top: -20%;
   width: 100%;
   
-}.image-4 {
+}.pppp.image-4 {
   position: relative;
   max-width: none;
   max-height: none;
   float: none;
+  top: -20%;
   width: 100%;
 
-}.image-outer1 {
+}.pppp.image-outer1 {
   top: 0px;
   float: left;
   position: relative;
@@ -140,27 +144,29 @@ a:hover {
   width: 50%;
   overflow: hidden;
   
-}.image-outer2 {
+}.pppp.image-outer2 {
   float: left;
-  position: relative;
+  position: absolute;
   display: inline;
   width: 50%;
   height: 33%;
   overflow: hidden;
   background-color: blue;
 
-}.image-outer3 {
+}.pppp.image-outer3 {
   background-color: green;
   float: left;
-  position: relative;
-  /*display: block;*/
+  position: absolute;
+  left: 50%;
+  top: 33%;
   width: 50%;
-  height: 10%;
+  height: 33%;
   overflow: hidden;
 
-}.image-outer4 {
-  position: relative;
-  /*display: block;*/
+}.pppp.image-outer4 {
+  position: absolute;
+  top: 66%;
+  left:50%;
   height: 33%;
   width: 50%;
   overflow: hidden;
