@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"cont",
+				"containerClass"
+			],
+			[
+				"class",
+				"classString"
+			],
+			[
 				"backgrou",
 				"background-color"
 			],
@@ -203,7 +211,7 @@
 			"file": "/Users/reubenposthuma/DEV/Soularium/app/assets/javascripts/app.js",
 			"settings":
 			{
-				"buffer_size": 6544,
+				"buffer_size": 7552,
 				"line_ending": "Unix",
 				"name": "App = Ember.Application.create() {"
 			}
@@ -212,24 +220,16 @@
 			"file": "index.html.haml",
 			"settings":
 			{
-				"buffer_size": 2112,
+				"buffer_size": 2030,
 				"line_ending": "Unix",
 				"name": "%h1 Welcome to Soularium"
-			}
-		},
-		{
-			"contents": "%div{:bind=>{:class=>'view.item.containerClass'}}\n\n%img{:class=>'image-item', :bind =>{ :src => 'view.item.href', :class=>'view.item.class' }}",
-			"settings":
-			{
-				"buffer_size": 142,
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "/Users/reubenposthuma/DEV/Soularium/app/views/layouts/application.html.erb",
 			"settings":
 			{
-				"buffer_size": 354,
+				"buffer_size": 457,
 				"line_ending": "Unix"
 			}
 		},
@@ -242,27 +242,18 @@
 			}
 		},
 		{
-			"file": "/Users/reubenposthuma/DEV/Soularium/Procfile",
-			"settings":
-			{
-				"buffer_size": 57,
-				"line_ending": "Unix",
-				"name": "web: bundle exec unicorn -p $PORT -c ./config/unic"
-			}
-		},
-		{
 			"file": "/Users/reubenposthuma/DEV/Soularium/app/assets/stylesheets/layout.css",
 			"settings":
 			{
-				"buffer_size": 2429,
+				"buffer_size": 2522,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "PPPP\nimg.image-1 {\n  float: left;\n  position: relative;\n  left: -33%;\n  max-width: none;\n  height: 100%;\n  \n}.image-2 {\n  float: left;\n  position: relative;\n  left: -33%;\n  max-width: none;\n  height: 100%;\n  \n}.image-3 {\n  float: left;\n  position: relative;\n  left: -33%;\n  max-width: none;\n  height: 100%;\n  \n}.image-4 {\n  float: left;\n  position: relative;\n  left: -33%;\n  max-width: none;\n  height: 100%;\n\n}.image-5 {\n  \n}.image-6 {\n  \n}.image-outer1 {\n  float: left;\n  position: relative;\n  display: inline;\n  width: 25%;\n  overflow: hidden;\n  \n}.image-outer2 {\n  float: left;\n  position: relative;\n  display: inline;\n  width: 25%;\n  overflow: hidden;\n\n}.image-outer3 {\n  float: left;\n  position: relative;\n  display: inline;\n  width: 25%;\n  overflow: hidden;\n\n}.image-outer4 {\n  float: left;\n  position: relative;\n  display: block;\n  width: 25%;\n  overflow: hidden;\n}\n\nimg.image-1 {\n  float: left;\n  position: relative;\n  left: -33%;\n  max-width: none;\n  height: 100%;\n  \n}.image-2 {\n  float: left;\n  position: relative;\n  max-width: none;\n  height: 50%;\n  \n}.image-3 {\n  float: left;\n  position: relative;\n  max-width: none;\n  height: 50%;\n  \n}.image-4 {\n  float: left;\n  position: relative;\n  left: -33%;\n  max-width: none;\n  height: 100%;\n\n}.image-outer1 {\n  top: 0px;\n  float: left;\n  position: relative;\n  display: inline;\n  width: 25%;\n  overflow: hidden;\n  \n}.image-outer2 {\n  float: left;\n  position: relative;\n  display: inline;\n  width: 50%;\n  height: 50%;\n  overflow: hidden;\n\n}.image-outer3 {\n  float: left;\n  position: relative;\n  display: inline;\n  width: 50%;\n  height: 50%;\n  overflow: hidden;\n\n}.image-outer4 {\n  position: relative;\n  display: block;\n  width: 25%;\n  overflow: hidden;\n}\n\nPPLL \n.image-1 {\n  position: relative;\n  max-width: none;\n  left: -33%;\n  height: 100%;\n  \n}.image-2 {\n  position: relative;\n  max-width: none;\n  height: 50%;\n  \n}.image-3 {\n  position: relative;\n  max-width: none;\n  height: 50%;\n  \n}.image-4 {\n  position: relative;\n  max-width: none;\n  float: none;\n  left: -33%;\n  height: 100%;\n\n}.image-outer1 {\n  top: 0px;\n  float: left;\n  position: relative;\n  display: inline;\n  width: 25%;\n  overflow: hidden;\n  \n}.image-outer2 {\n  float: left;\n  position: relative;\n  display: inline;\n  width: 50%;\n  height: 50%;\n  overflow: hidden;\n\n}.image-outer3 {\n  float: left;\n  position: relative;\n  display: inline;\n  width: 50%;\n  height: 50%;\n  overflow: hidden;\n\n}.image-outer4 {\n  position: relative;\n  display: block;\n  width: 25%;\n  overflow: hidden;\n}\n\n",
+			"file": "/Users/reubenposthuma/DEV/Soularium/app/assets/stylesheets/layouts.css",
 			"settings":
 			{
-				"buffer_size": 2504,
+				"buffer_size": 3619,
 				"line_ending": "Unix",
 				"name": "PPPP"
 			}
@@ -271,7 +262,7 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 367.0,
+		"height": 392.0,
 		"selected_items":
 		[
 			[
@@ -300,6 +291,7 @@
 	},
 	"file_history":
 	[
+		"/Users/reubenposthuma/DEV/Soularium/Procfile",
 		"/Users/reubenposthuma/DEV/Soularium/app/assets/stylesheets/layout.css",
 		"/Users/reubenposthuma/DEV/Soularium/app/assets/stylesheets/scaffolds.css.scss",
 		"/Users/reubenposthuma/DEV/Soularium/app/assets/javascripts/application.js",
@@ -426,8 +418,7 @@
 		"/Users/reubenposthuma/DEV/outreach-generator/app/controllers/create_controller.rb",
 		"/Users/reubenposthuma/DEV/outreach-generator/app/assets/javascripts/create.js.coffee",
 		"/Users/reubenposthuma/Library/Application Support/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
-		"/Users/reubenposthuma/DEV/Rails/TestApp/Test/app/assets/javascripts/App.js",
-		"/Users/reubenposthuma/DEV/Rails/TestApp/Test/app/views/appointments/index.html.haml"
+		"/Users/reubenposthuma/DEV/Rails/TestApp/Test/app/assets/javascripts/App.js"
 	],
 	"find":
 	{
@@ -445,6 +436,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"plll",
 			".image-1 {\n  \n}",
 			"80%",
 			"overflow",
@@ -537,7 +529,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -545,15 +537,15 @@
 					"file": "/Users/reubenposthuma/DEV/Soularium/app/assets/javascripts/app.js",
 					"settings":
 					{
-						"buffer_size": 6544,
+						"buffer_size": 7552,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5338,
-								5338
+								5805,
+								5805
 							]
 						],
 						"settings":
@@ -564,7 +556,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2557.0,
+						"translation.y": 2686.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -574,15 +566,15 @@
 					"file": "index.html.haml",
 					"settings":
 					{
-						"buffer_size": 2112,
+						"buffer_size": 2030,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2056,
-								2056
+								370,
+								370
 							]
 						],
 						"settings":
@@ -593,50 +585,25 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 262.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"settings":
-					{
-						"buffer_size": 142,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								142,
-								142
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/Ruby Haml.tmLanguage"
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
 					"file": "/Users/reubenposthuma/DEV/Soularium/app/views/layouts/application.html.erb",
 					"settings":
 					{
-						"buffer_size": 354,
+						"buffer_size": 457,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								335,
-								335
+								231,
+								231
 							]
 						],
 						"settings":
@@ -650,7 +617,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "/Users/reubenposthuma/DEV/Soularium/Gemfile",
 					"settings":
 					{
@@ -676,46 +643,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "/Users/reubenposthuma/DEV/Soularium/Procfile",
-					"settings":
-					{
-						"buffer_size": 57,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								57,
-								57
-							]
-						],
-						"settings":
-						{
-							"auto_name": "web: bundle exec unicorn -p $PORT -c ./config/unic",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
+					"buffer": 4,
 					"file": "/Users/reubenposthuma/DEV/Soularium/app/assets/stylesheets/layout.css",
 					"settings":
 					{
-						"buffer_size": 2429,
+						"buffer_size": 2522,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2378,
-								2378
+								11,
+								11
 							]
 						],
 						"settings":
@@ -725,33 +665,36 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2047.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 5,
+					"file": "/Users/reubenposthuma/DEV/Soularium/app/assets/stylesheets/layouts.css",
 					"settings":
 					{
-						"buffer_size": 2504,
+						"buffer_size": 3619,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2502,
-								2502
+								3505,
+								3505
 							]
 						],
 						"settings":
 						{
 							"auto_name": "PPPP",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2097.0,
+						"translation.y": 3144.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

@@ -25,19 +25,24 @@ App.Item = Ember.Object.extend({
   name: null
 });
 
-App.Items = Ember.A();
+App.Items = Ember.ArrayProxy.create({
+  content: Em.A(),
+  getNext: function(orientation) {
+    obj = this.content.findProperty('orientation', orientation);
+    this.content.removeObject(obj);
+    return obj;
+  }
+});
 App.AnswerItems = Ember.A();
 
-App.Items.pushObject(App.Item.create({name: "Item 1", href: 'http://sphotos-h.ak.fbcdn.net/hphotos-ak-snc7/574618_10151515660270955_2046349226_n.jpg', class:'plll image-1', containerClass: 'plll image-outer1' }));
-App.Items.pushObject(App.Item.create({name: "Item 2", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg', class:'plll image-2', containerClass: 'plll image-outer2' }));
-App.Items.pushObject(App.Item.create({name: "Item 3", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg', class:'plll image-3', containerClass: 'plll image-outer3' }));
-App.Items.pushObject(App.Item.create({name: "Item 4", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg', class:'plll image-4', containerClass: 'plll image-outer4' }));
-// App.Items.pushObject(App.Item.create({name: "Item 2", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg', class:'image-2', containerClass: 'image-outer2 img-default'}));
-// App.Items.pushObject(App.Item.create({name: "Item 3", href: 'http://sphotos-g.ak.fbcdn.net/hphotos-ak-frc1/830386_436184266460895_521886329_o.jpg', class:'image-3', containerClass: 'image-outer3 img-default'}));
-// App.Items.pushObject(App.Item.create({name: "Item 4", href: 'http://sphotos-d.ak.fbcdn.net/hphotos-ak-prn1/882499_436883773057611_953088772_o.jpg', class:'image-4', containerClass: 'image-outer4'}));
-App.Items.pushObject(App.Item.create({name: "Item 5", href: 'http://sphotos-e.ak.fbcdn.net/hphotos-ak-ash3/892437_436883863057602_1813858880_o.jpg', class:'image-5', containerClass: 'image-outer5'}));
-App.Items.pushObject(App.Item.create({name: "Item 6", href: 'http://sphotos-g.ak.fbcdn.net/hphotos-ak-prn1/885343_441018039310851_1761746740_o.jpg', class:'image-6', containerClass: 'image-outer6'}));
-
+App.Items.content.pushObject(App.Item.create({name: "Item 1", href: 'http://sphotos-g.ak.fbcdn.net/hphotos-ak-prn1/17595_427046214041367_749533304_n.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 2", href: 'http://sphotos-h.ak.fbcdn.net/hphotos-ak-frc1/734641_436883716390950_1811006628_n.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'http://sphotos-d.ak.fbcdn.net/hphotos-ak-prn1/882499_436883773057611_953088772_o.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 4", href: 'http://sphotos-h.ak.fbcdn.net/hphotos-ak-prn1/549804_410369552375700_1275537165_n.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 1", href: 'http://sphotos-e.ak.fbcdn.net/hphotos-ak-frc1/734496_398907580188564_79020889_n.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 2", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-ash4/224560_366990523380270_1548188573_n.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'http://sphotos-d.ak.fbcdn.net/hphotos-ak-prn1/189363_364686446944011_2050580924_n.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 4", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg', orientation: 'l'}));
 App.IndexRoute = Ember.Route.extend({
   renderTemplate: function() {
     this.render('index');
@@ -64,11 +69,40 @@ App.IndexView = Ember.View.extend({
 });
 
 App.GridController = Ember.Controller.extend({
-  _itemList: App.Items,
   slides: function() {
     items = [];
-    for(var i=0; i<Math.ceil(this._itemList.length/4); i++) {
-      items[i] = {first:this._itemList[i*4], second:this._itemList[i*4+1], third:this._itemList[i*4+2], fourth:this._itemList[i*4+3], divID: 'slider-'+i};
+    _p = true;
+    length = Math.ceil(App.Items.content.length/4);
+    for(var i=0; i<length; i++) {
+      items[i] = [];
+      classString = "";
+      for(var j=0; j<4; j++) {
+        if(_p) {
+          nextItem = App.Items.getNext('p');   
+          if(nextItem)
+            classString += 'p'
+          else {
+            classString += 'l'
+            nextItem = App.Items.getNext('l');
+            _p = false;
+          }
+        }
+        else {
+          classString += 'l'
+          nextItem = App.Items.getNext('l');
+        }
+        if(nextItem) {
+          nextItem.class = "image-"+(j+1);
+          nextItem.containerClass = 'image-outer'+(j+1);
+          items[i][j] = nextItem;
+        }
+      }
+      for(var j=0; j<4; j++) {
+        if(items[i][j]) {
+          items[i][j].class = classString+" "+items[i][j].class;
+          items[i][j].containerClass = classString+" "+items[i][j].containerClass;
+        }
+      }
     }
     return items;
   }.property('App.Items')
@@ -99,7 +133,7 @@ App.GridView = Ember.View.extend({
     console.log('redraw');
     //calculate screen size
     width = $(window).width();
-    height = $(window).height()-20;
+    height = $(window).height();
     App.set('width', width);
     App.set('height', height);
     left = 15;
@@ -138,10 +172,8 @@ App.GridView = Ember.View.extend({
 
 App.ItemView = Ember.View.extend({
   templateName: 'item-partial',
-  item: null,
   willInsertElement: function() {
-    this.set('item', this._context[this.pos]);
-    console.log('done')
+    this.set('item', this._context);
   },
   click: function() {
     App.set('PreviewImage', this.item);

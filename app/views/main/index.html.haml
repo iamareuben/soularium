@@ -6,12 +6,11 @@
 %script{:type => "text/x-handlebars", "data-template-name"=>"grid"}
   %div{:class=>'iosSlider'}
     %div{:class=>'slider'}
-      {{#each slides}}
-      %div{:class=>'slide', :bind => {:id=>'divID'}}
-        {{view App.ItemView pos="first"}}
-        {{view App.ItemView pos="second"}}
-        {{view App.ItemView pos="third"}}
-        {{view App.ItemView pos="fourth"}}
+      {{#each slide in slides}}
+      %div{:class=>'slide'}
+        {{#each slide}}
+        {{view App.ItemView}}
+        {{/each}}
       {{/each}}
 
 

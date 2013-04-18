@@ -29,30 +29,33 @@
   
 }.pppp.image-outer1 {
   float: left;
-  position: relative;
+  position: absolute;
   display: inline;
   width: 25%;
   overflow: hidden;
   
 }.pppp.image-outer2 {
   float: left;
-  position: relative;
+  position: absolute;
   display: inline;
   width: 25%;
+  left: 25%;
   overflow: hidden;
 
 }.pppp.image-outer3 {
   float: left;
-  position: relative;
+  position: absolute;
   display: inline;
   width: 25%;
+  left:50%;
   overflow: hidden;
 
 }.pppp.image-outer4 {
   float: left;
-  position: relative;
+  position: absolute;
   display: block;
   width: 25%;
+  left:75%;
   overflow: hidden;
 }
 
@@ -169,7 +172,6 @@
   overflow: hidden;
 }
 
-PLLL
 .plll.image-1 {
   position: relative;
   max-width: none;
@@ -216,7 +218,7 @@ PLLL
   overflow: hidden;
 
 }.plll.image-outer3 {
-  background-color: green;
+  background-color: blue;
   float: left;
   position: absolute;
   left: 50%;
@@ -226,12 +228,64 @@ PLLL
   overflow: hidden;
 
 }.plll.image-outer4 {
-  background-color: green;
+  background-color: red;
   float: left;
   position: absolute;
   top: 66%;
   left: 50%;
   width: 50%;
   height: 33%;
+  overflow: hidden;
+}
+
+.llll.image-1 {
+  position: relative;
+  height: 100%;
+  
+}.llll.image-2 {
+  position: relative;
+  height: 100%;
+  
+}.llll.image-3 {
+  position: relative;
+  height: 100%;
+  
+}.llll.image-4 {
+  position: relative;
+  height: 100%;
+
+}.llll.image-outer1 {
+  top: 0px;
+  float: left;
+  position: absolute;
+  display: inline;
+  width: 50%;
+  height: 50%;
+  overflow: hidden;
+  
+}.llll.image-outer2 {
+  float: left;
+  position: absolute;
+  left: 50%;
+  width: 50%;
+  height: 50%;
+  overflow: hidden;
+
+}.llll.image-outer3 {
+  float: left;
+  position: absolute;
+  left: 0px;
+  top: 50%;
+  width: 50%;
+  height: 50%;
+  overflow: hidden;
+
+}.llll.image-outer4 {
+  float: left;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 50%;
   overflow: hidden;
 }
