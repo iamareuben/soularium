@@ -37,12 +37,12 @@ App.AnswerItems = Ember.A();
 
 App.Items.content.pushObject(App.Item.create({name: "Item 1", href: 'http://sphotos-g.ak.fbcdn.net/hphotos-ak-prn1/17595_427046214041367_749533304_n.jpg', orientation: 'p'}));
 App.Items.content.pushObject(App.Item.create({name: "Item 2", href: 'http://sphotos-h.ak.fbcdn.net/hphotos-ak-frc1/734641_436883716390950_1811006628_n.jpg', orientation: 'l'}));
-App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'http://sphotos-d.ak.fbcdn.net/hphotos-ak-prn1/882499_436883773057611_953088772_o.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'http://sphotos-g.ak.fbcdn.net/hphotos-ak-prn1/66066_10152310658095007_247127866_n.jpg', orientation: 'p'}));
 App.Items.content.pushObject(App.Item.create({name: "Item 4", href: 'http://sphotos-h.ak.fbcdn.net/hphotos-ak-prn1/549804_410369552375700_1275537165_n.jpg', orientation: 'p'}));
 App.Items.content.pushObject(App.Item.create({name: "Item 1", href: 'http://sphotos-e.ak.fbcdn.net/hphotos-ak-frc1/734496_398907580188564_79020889_n.jpg', orientation: 'p'}));
 App.Items.content.pushObject(App.Item.create({name: "Item 2", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-ash4/224560_366990523380270_1548188573_n.jpg', orientation: 'p'}));
-App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'http://sphotos-d.ak.fbcdn.net/hphotos-ak-prn1/189363_364686446944011_2050580924_n.jpg', orientation: 'l'}));
-App.Items.content.pushObject(App.Item.create({name: "Item 4", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-frc1/882482_436183993127589_1618193570_o.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'http://sphotos-c.ak.fbcdn.net/hphotos-ak-ash3/559835_10151543417095955_102056623_n.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 4", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-ash4/264608_10150242924022636_2713679_n.jpg', orientation: 'p'}));
 App.IndexRoute = Ember.Route.extend({
   renderTemplate: function() {
     this.render('index');

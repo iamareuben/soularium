@@ -2,28 +2,28 @@
 .pppp.image-1 {
   float: left;
   position: relative;
-  left: -33%;
+  left: -100%;
   max-width: none;
   height: 100%;
   
 }.pppp.image-2 {
   float: left;
   position: relative;
-  left: -33%;
+  left: -100%;
   max-width: none;
   height: 100%;
   
 }.pppp.image-3 {
   float: left;
   position: relative;
-  left: -33%;
+  left: -100%;
   max-width: none;
   height: 100%;
   
 }.pppp.image-4 {
   float: left;
   position: relative;
-  left: -33%;
+  left: -100%;
   max-width: none;
   height: 100%;
   
@@ -63,57 +63,55 @@
 .pppl.image-1 {
   float: left;
   position: relative;
-  left: -33%;
   max-width: none;
-  height: 100%;
   
 }.pppl.image-2 {
   float: left;
   position: relative;
   max-width: none;
-  height: 50%;
+  height: 100%;
   
 }.pppl.image-3 {
   float: left;
   position: relative;
   max-width: none;
-  height: 50%;
+  height: 100%;
   
 }.pppl.image-4 {
   float: left;
   position: relative;
-  left: -33%;
   max-width: none;
   height: 100%;
 
 }.pppl.image-outer1 {
   top: 0px;
-  float: left;
-  position: relative;
-  display: inline;
-  width: 25%;
+  position: absolute;
+  width: 50%;
+  height: 100%;
   overflow: hidden;
   
 }.pppl.image-outer2 {
-  float: left;
-  position: relative;
-  display: inline;
-  width: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 25%;
   height: 50%;
   overflow: hidden;
 
 }.pppl.image-outer3 {
-  float: left;
-  position: relative;
-  display: inline;
-  width: 50%;
+  position: absolute;
+  left: 75%;
+  top: 50%;
+  width: 25%;
   height: 50%;
   overflow: hidden;
 
 }.pppl.image-outer4 {
-  position: relative;
-  display: block;
-  width: 25%;
+  position: absolute;
+  left: 50%;
+  top: 0px;
+  width: 50%;
+  height: 50%;
   overflow: hidden;
 }
 
@@ -124,7 +122,7 @@
   left: -33%;
   height: 100%;
   
-}.ppll.image-2 {
+}.ppll.image-4 {
   position: relative;
   max-width: none;
   height: 50%;
@@ -134,7 +132,7 @@
   max-width: none;
   height: 50%;
   
-}.ppll.image-4 {
+}.ppll.image-2 {
   position: relative;
   max-width: none;
   float: none;
@@ -149,7 +147,7 @@
   width: 25%;
   overflow: hidden;
   
-}.ppll.image-outer2 {
+}.ppll.image-outer4 {
   float: left;
   position: relative;
   display: inline;
@@ -165,8 +163,8 @@
   height: 50%;
   overflow: hidden;
 
-}.ppll.image-outer4 {
-  position: relative;
+}.ppll.image-outer2 {
+  position: absolute;
   display: block;
   width: 25%;
   overflow: hidden;
