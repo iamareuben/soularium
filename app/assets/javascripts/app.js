@@ -8,8 +8,8 @@ App.ApplicationView = Ember.View.extend({
   templateName: 'app',
   PreviewImage: null,
   width: 800,
-  height: 400
-
+  height: 400,
+  show: false
 });
 
 App.ApplicationController = Ember.Controller.extend({
@@ -33,7 +33,28 @@ App.Items = Ember.ArrayProxy.create({
     return obj;
   }
 });
-App.AnswerItems = Ember.A();
+answerItems = Ember.ArrayProxy.extend ({
+  content: Em.A(),
+
+  items: function() {
+    return (this.content.length > 0);
+  }.property('content.length'),
+
+  more: function() {
+    return (this.content.length < 3);
+  }.property('content.length'),
+
+  tryAddObject: function(obj) {
+    if(this.content.length < 3) 
+      this.addObject(obj);
+  },
+  reset: function() {
+    this.clear();
+  }
+});
+
+App.AnswerItems = answerItems.create();
+
 
 App.Items.content.pushObject(App.Item.create({name: "Item 1", href: 'http://sphotos-g.ak.fbcdn.net/hphotos-ak-prn1/17595_427046214041367_749533304_n.jpg', orientation: 'p'}));
 App.Items.content.pushObject(App.Item.create({name: "Item 2", href: 'http://sphotos-h.ak.fbcdn.net/hphotos-ak-frc1/734641_436883716390950_1811006628_n.jpg', orientation: 'l'}));
@@ -110,27 +131,28 @@ App.GridController = Ember.Controller.extend({
 
 App.SelectedController = Ember.Controller.extend({
   bottomTransition: '0px',
-  show: false,
   toggleContainer: function() {
     $('#selected-container').animate({bottom: this.bottomTransition}, 500);
     if(this.bottomTransition == '0px') {
       this.bottomTransition = '-162px';
-      this.set('show', true);
+      App.set('show', true);
     }
     else {
       this.bottomTransition = '0px';
-      this.set('show', false);
+      App.set('show', false);
     }
   },
   viewSelection: function() {
     this.transitionToRoute('show')
-
+  },
+  resetSelection: function() {
+    App.AnswerItems.reset();
   }
 });
 
 App.GridView = Ember.View.extend({
   didInsertElement:function() {
-    console.log('redraw');
+    App.set('show',false);
     //calculate screen size
     width = $(window).width();
     height = $(window).height();
@@ -155,7 +177,8 @@ App.GridView = Ember.View.extend({
       tabToAdvance: true,
       keyboardControls: true,
       desktopClickDrag: true,
-      stageCSS: {left: left, top:'10px'}
+      stageCSS: {left: left, top:'10px'},
+      mode: 'html5',
       //onSlideChange: changeSlideIdentifier
     });
 
@@ -195,7 +218,7 @@ App.ZoomView = Ember.View.extend({
 
 App.ZoomController = Ember.Controller.extend({
   addSelection: function() {
-    App.AnswerItems.pushObject(App.PreviewImage);
+    App.AnswerItems.tryAddObject(App.PreviewImage);
   },
   close: function() {
     $('#item-zoom').slideUp();
@@ -206,16 +229,16 @@ App.ShowView = Ember.View.extend({
 
   didInsertElement: function() {
     playlist = [];
-    for(i=0; i<App.AnswerItems.length; i++) {
+    for(i=0; i<App.AnswerItems.content.length; i++) {
       console.log(App.AnswerItems[i])
       playlist[i] = new Object;
-      playlist[i].title = App.AnswerItems[i].name;
-      playlist[i].image = App.AnswerItems[i].href;
+      playlist[i].title = App.AnswerItems.content[i].name;
+      playlist[i].image = App.AnswerItems.content[i].href;
       playlist[i].description = "PHHT WHATEVER";
     }
 
     CoverFlowTest = playlist;
-    if(App.AnswerItems.length > 0) {
+    if(App.AnswerItems.content.length > 0) {
       $('#coverflow').coverflow({
         width: App.width,
         height: App.height*0.9,
@@ -228,3 +251,13 @@ App.ShowView = Ember.View.extend({
     }
   }
 })
+
+App.ShowController = Ember.Controller.extend ({
+  back: function() {
+    this.transitionToRoute('index');
+  },
+  reset: function() {
+    App.AnswerItems.reset();
+    this.transitionToRoute('show')
+  }
+});

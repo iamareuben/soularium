@@ -80,6 +80,7 @@ body {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   position:absolute;
+  padding-left: 80px;
   bottom: -162px;
   width: 80%;
   left: 10%;
@@ -94,6 +95,38 @@ body {
   position: absolute;
   right: 20px;
   top: 80px;
+}
+
+#reset-button {
+  position: absolute;
+  left: 20px;
+  top: 80px;
+}
+
+#show-back-button {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  z-index: 999;
+}
+i.white {
+  color: white;
+}
+i.grey {
+  color: #666;
+}
+a:hover {
+  text-decoration: none !important;
+  background-color: none;
+}
+
+
+#show-reset-button {
+  position: absolute;
+  left: 20px;
+  top: 100px;
+  color: white;
+  z-index: 999;
 }
 
 #toggle-button {

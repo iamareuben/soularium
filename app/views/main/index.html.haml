@@ -16,12 +16,17 @@
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"selected"}
   %div{:id=>'selected-container'}
+    {{#if App.AnswerItems.items}}
     %div{:id=>'viewall-button'}
       %a{:href=>"", :_action => 'viewSelection'}
-        %i{:class=>"icon-chevron-right icon-4x"}
+        %i{:class=>"icon-chevron-right icon-4x grey"}
+    {{/if}}
+    %div{:id=>'reset-button'} 
+      %a{:href=>"", :_action => 'resetSelection'}
+        %i{:class=>"icon-refresh icon-4x grey"}
 
     %a{:href=>"",:_action => 'toggleContainer' }
-      {{#if show}}
+      {{#if App.show}}
       %i{:id=>'toggle-button', :class=>"icon-chevron-down icon-white icon-4x"}
       {{else}}
       %i{:id=>'toggle-button', :class=>"icon-chevron-up icon-white icon-4x"}
@@ -34,12 +39,19 @@
     {{/each}}
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"zoom"}
+
   %div{:id=>"item-zoom"}
     %img{:class=>'zoom-image', :bind =>{ :src => 'App.PreviewImage.href'}}
     %div{:class=>'row-fluid'}
+      {{#if App.AnswerItems.more}}
       %button{:class=>'btn btn-large btn-primary span2 offset4 preview-button', :type=>'button', :_action => 'addSelection' }
         %i{:class=>"icon-heart icon-white"} 
         &nbspAdd to list
+      {{else}}
+      %button{:class=>'btn btn-large span2 offset4 preview-button disabled', :type=>'button', :_action => 'addSelection' }
+        %i{:class=>"icon-heart icon-white"} 
+        &nbspAdd to list
+      {{/if}}
       %button{:class=>'btn btn-large btn-danger span2 preview-button', :type=>'button', :_action => 'close' }
         %i{:class=>"icon-remove icon-white"} 
         &nbspClose
@@ -55,6 +67,13 @@
     %img{:class=>'image-item', :bind =>{ :src => 'view.item.href', :class=>'view.item.class' }}
 
 %script{:type => "text/x-handlebars", "data-template-name"=>"show"}
+  %div{:id=>'show-back-button'}
+    %a{:href=>"#", :_action => 'back'}
+      %i{:class=>"icon-chevron-left icon-4x white"}
+  %div{:id=>'show-reset-button'} 
+    %a{:href=>"#", :_action => 'reset'}
+      %i{:class=>"icon-refresh icon-4x white"}
+
   %div{:id=>'coverflow'}
       
 
