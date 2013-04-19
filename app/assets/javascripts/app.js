@@ -27,10 +27,19 @@ App.Item = Ember.Object.extend({
 
 App.Items = Ember.ArrayProxy.create({
   content: Em.A(),
-  getNext: function(orientation) {
-    obj = this.content.findProperty('orientation', orientation);
-    this.content.removeObject(obj);
-    return obj;
+  getBlock: function() {
+    items = [];
+    for(i=0; i<4;i++) {
+      if(this.content.length != 0) {
+        index = Math.floor(Math.random() * this.content.length);
+        items[i] = this.content.objectAt(index);
+        this.content.removeAt(index);
+      }
+    }
+    items_sorted = items.sort(function(a,b) {
+      return a.get('orientation') < b.get('orientation');
+    });
+    return items_sorted;
   }
 });
 answerItems = Ember.ArrayProxy.extend ({
@@ -56,14 +65,55 @@ answerItems = Ember.ArrayProxy.extend ({
 App.AnswerItems = answerItems.create();
 
 
-App.Items.content.pushObject(App.Item.create({name: "Item 1", href: 'http://sphotos-g.ak.fbcdn.net/hphotos-ak-prn1/17595_427046214041367_749533304_n.jpg', orientation: 'p'}));
-App.Items.content.pushObject(App.Item.create({name: "Item 2", href: 'http://sphotos-h.ak.fbcdn.net/hphotos-ak-frc1/734641_436883716390950_1811006628_n.jpg', orientation: 'l'}));
-App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'http://sphotos-g.ak.fbcdn.net/hphotos-ak-prn1/66066_10152310658095007_247127866_n.jpg', orientation: 'p'}));
-App.Items.content.pushObject(App.Item.create({name: "Item 4", href: 'http://sphotos-h.ak.fbcdn.net/hphotos-ak-prn1/549804_410369552375700_1275537165_n.jpg', orientation: 'p'}));
-App.Items.content.pushObject(App.Item.create({name: "Item 1", href: 'http://sphotos-e.ak.fbcdn.net/hphotos-ak-frc1/734496_398907580188564_79020889_n.jpg', orientation: 'p'}));
-App.Items.content.pushObject(App.Item.create({name: "Item 2", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-ash4/224560_366990523380270_1548188573_n.jpg', orientation: 'p'}));
-App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'http://sphotos-c.ak.fbcdn.net/hphotos-ak-ash3/559835_10151543417095955_102056623_n.jpg', orientation: 'p'}));
-App.Items.content.pushObject(App.Item.create({name: "Item 4", href: 'http://sphotos-a.ak.fbcdn.net/hphotos-ak-ash4/264608_10150242924022636_2713679_n.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 1", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417190919832_0002.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 2", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417190919832_0004.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417190919832_0005.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417190919832_0006.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417190919832_0007.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191114700_0001.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191114700_0002.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191114700_0003.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191114700_0004.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191114700_0005.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191114700_0006.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191114700_0007.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191114700_0008.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191114700_0009.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191114700_0010.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191241552_0001.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191241552_0002.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191241552_0003.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191241552_0004.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191241552_0005.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191241552_0006.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191241552_0007.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191241552_0008.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191241552_0009.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191241552_0010.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191241552_0011.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191241552_0012.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191241552_0013.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191422271_0001.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191422271_0002.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191422271_0003.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191422271_0004.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191422271_0005.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191422271_0006.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191422271_0007.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191422271_0008.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191422271_0009.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191422271_0010.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191422271_0011.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191422271_0012.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191422271_0013.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191422271_0014.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191422271_0015.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191422271_0016.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191453475_0001.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191453475_0002.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191453475_0003.jpg', orientation: 'p'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191453475_0004.jpg', orientation: 'l'}));
+App.Items.content.pushObject(App.Item.create({name: "Item 3", href: 'https://s3-us-west-2.amazonaws.com/soularium/20130417191453475_0005.jpg', orientation: 'p'}));
 App.IndexRoute = Ember.Route.extend({
   renderTemplate: function() {
     this.render('index');
@@ -91,41 +141,22 @@ App.IndexView = Ember.View.extend({
 
 App.GridController = Ember.Controller.extend({
   slides: function() {
-    items = [];
-    _p = true;
+    slide_data = [],
     length = Math.ceil(App.Items.content.length/4);
     for(var i=0; i<length; i++) {
-      items[i] = [];
+      slide_data[i] = App.Items.getBlock();
       classString = "";
-      for(var j=0; j<4; j++) {
-        if(_p) {
-          nextItem = App.Items.getNext('p');   
-          if(nextItem)
-            classString += 'p'
-          else {
-            classString += 'l'
-            nextItem = App.Items.getNext('l');
-            _p = false;
-          }
-        }
-        else {
-          classString += 'l'
-          nextItem = App.Items.getNext('l');
-        }
-        if(nextItem) {
-          nextItem.class = "image-"+(j+1);
-          nextItem.containerClass = 'image-outer'+(j+1);
-          items[i][j] = nextItem;
-        }
+      for(var j=0; j<slide_data[i].length; j++) {
+        classString += slide_data[i][j].orientation;    
+        slide_data[i][j].class = "image-"+(j+1);
+        slide_data[i][j].containerClass = 'image-outer'+(j+1);
       }
-      for(var j=0; j<4; j++) {
-        if(items[i][j]) {
-          items[i][j].class = classString+" "+items[i][j].class;
-          items[i][j].containerClass = classString+" "+items[i][j].containerClass;
-        }
+      for(var j=0; j<slide_data[i].length; j++) {
+        slide_data[i][j].class = classString+" "+slide_data[i][j].class;
+        slide_data[i][j].containerClass = classString+" "+slide_data[i][j].containerClass;
       }
     }
-    return items;
+    return slide_data;
   }.property('App.Items')
 });
 

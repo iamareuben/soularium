@@ -1,29 +1,28 @@
-
 .pppp.image-1 {
   float: left;
   position: relative;
-  left: -100%;
+  left: -50%;
   max-width: none;
   height: 100%;
   
 }.pppp.image-2 {
   float: left;
   position: relative;
-  left: -100%;
+  left: -50%;
   max-width: none;
   height: 100%;
   
 }.pppp.image-3 {
   float: left;
   position: relative;
-  left: -100%;
+  left: -50%;
   max-width: none;
   height: 100%;
   
 }.pppp.image-4 {
   float: left;
   position: relative;
-  left: -100%;
+  left: -50%;
   max-width: none;
   height: 100%;
   
@@ -64,24 +63,28 @@
   float: left;
   position: relative;
   max-width: none;
+  width: 100%;
   
 }.pppl.image-2 {
   float: left;
   position: relative;
   max-width: none;
   height: 100%;
+  width:100%;
   
 }.pppl.image-3 {
   float: left;
   position: relative;
   max-width: none;
   height: 100%;
+  width:100%;
   
 }.pppl.image-4 {
   float: left;
   position: relative;
   max-width: none;
   height: 100%;
+  width:100%;
 
 }.pppl.image-outer1 {
   top: 0px;
@@ -126,6 +129,7 @@
   position: relative;
   max-width: none;
   height: 50%;
+  width:100%;
   
 }.ppll.image-3 {
   position: relative;
@@ -165,7 +169,7 @@
 
 }.ppll.image-outer2 {
   position: absolute;
-  display: block;
+  left: 75%;
   width: 25%;
   overflow: hidden;
 }
@@ -175,6 +179,7 @@
   max-width: none;
   max-height: none;
   height: 100%;
+  width: 100%;
   
 }.plll.image-2 {
   position: relative;
